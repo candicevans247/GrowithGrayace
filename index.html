@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowWithGracie – Private Community</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #fff3e0;
+      color: #e65100;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      letter-spacing: 0.3px;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #0f0f0f;
+    }
+
+    h1 span { color: #f97316; }
+
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 36px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 4px;
+      background: #f97316;
+      border-radius: 2px;
+      margin-bottom: 36px;
+    }
+
+    .perks {
+      list-style: none;
+      margin-bottom: 40px;
+    }
+
+    .perks li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .perks li .icon {
+      width: 28px;
+      height: 28px;
+      background: #fff3e0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+
+    .perks li strong {
+      display: block;
+      font-weight: 700;
+      color: #0f0f0f;
+      margin-bottom: 2px;
+    }
+
+    .perks li span {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .price-block {
+      background: #fafafa;
+      border: 1px solid #e8e8e8;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+
+    .price {
+      font-size: 48px;
+      font-weight: 900;
+      color: #0f0f0f;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .price sup {
+      font-size: 24px;
+      font-weight: 700;
+      vertical-align: super;
+    }
+
+    .billing {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 24px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 15px;
+      color: #1a1a1a;
+      background: #fff;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus { border-color: #f97316; }
+    .form-group input::placeholder { color: #bbb; }
+
+    .hint {
+      font-size: 12px;
+      color: #999;
+      margin-top: 5px;
+    }
+
+    .hint a { color: #f97316; }
+
+    .error-msg {
+      color: #e53e3e;
+      font-size: 13px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 17px;
+      background: #f97316;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn:hover { background: #ea6c0a; }
+    .btn:active { transform: scale(0.98); }
+    .btn:disabled { background: #fbb97a; cursor: not-allowed; }
+
+    .guarantee {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      margin-top: 14px;
+    }
+
+    .guarantee span { color: #f97316; font-weight: 600; }
+
+    .social-proof {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      padding: 14px 18px;
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 12px;
+    }
+
+    .avatars { display: flex; }
+
+    .avatars div {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-right: -8px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatars div:nth-child(1) { background: #fde68a; }
+    .avatars div:nth-child(2) { background: #a7f3d0; }
+    .avatars div:nth-child(3) { background: #bfdbfe; }
+
+    .social-proof p { font-size: 13px; color: #555; }
+    .social-proof p strong { color: #0f0f0f; }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 28px; }
+      .price { font-size: 38px; }
+      .container { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="badge">🔒 Private Community — Limited Spots</div>
+
+    <h1>Build a Faceless Celebrity Channel That <span>Actually Grows</span></h1>
+
+    <p class="subtitle">
+      Join GrowWithGracie and get everything you need to start, grow and
+      monetize a celebrity niche channel — even if you are starting from zero.
+    </p>
+
+    <div class="divider"></div>
+
+    <ul class="perks">
+      <li>
+        <div class="icon">🎬</div>
+        <div>
+          <strong>Access to Tubecelerator</strong>
+          <span>Our AI-powered tool that automatically creates
+          ready-to-post celebrity videos for you.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon">📰</div>
+        <div>
+          <strong>Daily Trending Celebrity Topics</strong>
+          <span>Never run out of ideas. Get what is trending in the
+          celebrity niche delivered to you every single day.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon">🤝</div>
+        <div>
+          <strong>Full Handholding Through Your Growth</strong>
+          <span>Step-by-step guidance to help you launch and scale
+          your channel from scratch.</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="social-proof">
+      <div class="avatars">
+        <div>😊</div>
+        <div>🙂</div>
+        <div>😄</div>
+      </div>
+      <p><strong>Members are already posting.</strong>
+      Join the ones building in private.</p>
+    </div>
+
+    <div class="price-block">
+      <div class="price"><sup>$</sup>49</div>
+      <div class="billing">per month · cancel anytime</div>
+
+      <div class="form-group">
+        <label>Your Telegram Username</label>
+        <input
+          type="text"
+          id="tg-username"
+          placeholder="@yourusername"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Your Telegram User ID</label>
+        <input
+          type="text"
+          id="tg-id"
+          placeholder="e.g. 123456789"
+        />
+        <p class="hint">
+          Don't know your ID? Message
+          <a href="https://t.me/userinfobot" target="_blank">@userinfobot</a>
+          on Telegram — it replies with your ID instantly.
+        </p>
+        <p class="error-msg" id="error-msg">
+          Please enter a valid Telegram User ID (numbers only).
+        </p>
+      </div>
+
+      <button class="btn" id="pay-btn" onclick="handlePayment()">
+        Join GrowWithGracie — $49/month
+      </button>
+
+      <p class="guarantee">
+        🔒 Secure payment · <span>Cancel anytime</span>
+      </p>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 GrowWithGracie · All rights reserved
+    </div>
+
+  </div>
+
+  <script>
+    function handlePayment() {
+      const telegramId = document.getElementById('tg-id').value.trim();
+      const errorMsg = document.getElementById('error-msg');
+      const btn = document.getElementById('pay-btn');
+
+      if (!telegramId || !/^\d+$/.test(telegramId)) {
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      errorMsg.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Redirecting to checkout...';
+
+      const SERVER_URL = '%%BOT_SERVER_URL%%';
+      const PLAN_CODE = '%%PLAN_CODE%%';
+
+      window.location.href =
+        `${SERVER_URL}/paystack/subscribe/${PLAN_CODE}?tg=${telegramId}`;
+    }
+  </script>
+</body>
+</html>
